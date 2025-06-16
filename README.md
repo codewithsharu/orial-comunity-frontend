@@ -1,45 +1,9 @@
-# 12+ Hour MERN Masterclass: Build and Deploy a Threads App with Real-Time Chat Functionality
+# Threads UI Clone Youtube Tutorial
 
-![Demo App](https://i.ibb.co/BnGdh10/Group-62.png)
+### Built With React and Chakra UI
 
-[Video Tutorial on Youtube](https://youtu.be/G4V4xO9wyD8)
+# [Tutorial](https://youtu.be/TW7wltm4gD8)
 
-Feature List:
+# [App Demo](https://threads-clone-yt.vercel.app/)
 
--   🌟 Tech stack: MERN + Socket.io + Chakra UI
--   🎃 Authentication & Authorization with JWT
--   📝 Create Post
--   🗑️ Delete Post
--   ❤️ Like/Unlike Post
--   💬 Comment to a Post
--   👥 Follow/Unfollow Users
--   ❄️ Freeze Your Account
--   🌓 Dark/Light Mode
--   📱 Completely Responsive
--   💬 Chat App With Image Support
--   👀 Seen/Unseen Status for Messages
--   🔊 Notification sounds
--   ⭐ Deployment for FREE
-
-### Setup .env file
-
-```js
-PORT=...
-MONGO_URI=...
-JWT_SECRET=...
-CLOUDINARY_CLOUD_NAME=...
-CLOUDINARY_API_KEY=...
-CLOUDINARY_API_SECRET=...
-```
-
-### Build the app
-
-```shell
-npm run build
-```
-
-### Start the app
-
-```shell
-npm start
-```
+![Screenshot of App](https://i.ibb.co/bsJ6jf6/Screenshot-5.png)
