@@ -50,7 +50,9 @@ const Post = ({ post, postedBy }) => {
 						src={post.postedBy.profilePic}
 						onClick={(e) => {
 							e.preventDefault();
-							navigate(`/${post.postedBy.username}`);
+							if (post.postedBy && post.postedBy.username) {
+								navigate(`/${post.postedBy.username}`);
+							}
 						}}
 					/>
 					<Box w='1px' h={"full"} bg='gray.light' my={2}></Box>
@@ -101,7 +103,9 @@ const Post = ({ post, postedBy }) => {
 								fontWeight={"bold"}
 								onClick={(e) => {
 									e.preventDefault();
-									navigate(`/${post.postedBy.username}`);
+									if (post.postedBy && post.postedBy.username) {
+										navigate(`/${post.postedBy.username}`);
+									}
 								}}
 							>
 								{post.postedBy.username}

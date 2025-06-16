@@ -25,8 +25,12 @@ const UserPage = () => {
 					},
 				});
 				const data = await res.json();
-				console.log(data);
-				setPosts(data);
+				if (Array.isArray(data)) {
+					setPosts(data);
+				} else {
+					console.error("Expected array but got:", data);
+					setPosts([]);
+				}
 			} catch (error) {
 				showToast("Error", error.message, "error");
 				setPosts([]);
