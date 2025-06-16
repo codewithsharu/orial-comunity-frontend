@@ -25,7 +25,11 @@ const PostPage = () => {
 		const getPost = async () => {
 			setPosts([]);
 			try {
-				const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${pid}`);
+				const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${pid}`, {
+					headers: {
+						Authorization: `Bearer ${JSON.parse(localStorage.getItem("user-threads")).token}`,
+					},
+				});
 				const data = await res.json();
 				if (data.error) {
 					showToast("Error", data.error, "error");
@@ -44,7 +48,11 @@ const PostPage = () => {
 			if (!currentPost?.postedBy) return;
 			setLoading(true);
 			try {
-				const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/profile/${currentPost.postedBy._id}`);
+				const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/profile/${currentPost.postedBy._id}`, {
+					headers: {
+						Authorization: `Bearer ${JSON.parse(localStorage.getItem("user-threads")).token}`,
+					},
+				});
 				const data = await res.json();
 				if (data.error) {
 					showToast("Error", data.error, "error");

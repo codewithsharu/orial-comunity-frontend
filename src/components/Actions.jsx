@@ -40,8 +40,8 @@ const Actions = ({ post }) => {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",
+					Authorization: `Bearer ${JSON.parse(localStorage.getItem("user-threads")).token}`,
 				},
-				credentials: 'include'
 			});
 			const data = await res.json();
 			if (data.error) return showToast("Error", data.error, "error");
@@ -83,8 +83,8 @@ const Actions = ({ post }) => {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
+					Authorization: `Bearer ${JSON.parse(localStorage.getItem("user-threads")).token}`,
 				},
-				credentials: 'include',
 				body: JSON.stringify({ text: reply }),
 			});
 			const data = await res.json();

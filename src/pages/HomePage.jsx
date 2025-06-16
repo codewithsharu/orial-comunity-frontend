@@ -16,9 +16,10 @@ const HomePage = () => {
 			setPosts([]);
 			try {
 				const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/feed`, {
-					credentials: 'include',
+					method: "GET",
 					headers: {
-						'Content-Type': 'application/json',
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${JSON.parse(localStorage.getItem("user-threads")).token}`,
 					},
 				});
 				

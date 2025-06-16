@@ -44,6 +44,7 @@ const UserHeader = ({ user }) => {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
+					Authorization: `Bearer ${JSON.parse(localStorage.getItem("user-threads")).token}`,
 				},
 			});
 			const data = await res.json();

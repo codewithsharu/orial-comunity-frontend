@@ -29,8 +29,8 @@ const Comment = ({ post, reply }) => {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
+					Authorization: `Bearer ${JSON.parse(localStorage.getItem("user-threads")).token}`,
 				},
-				credentials: 'include',
 				body: JSON.stringify({ text: replyText }),
 			});
 			const data = await res.json();

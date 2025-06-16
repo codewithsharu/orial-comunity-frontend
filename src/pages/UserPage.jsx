@@ -19,7 +19,11 @@ const UserPage = () => {
 		const getPosts = async () => {
 			setFetchingPosts(true);
 			try {
-				const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/user/${username}`);
+				const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/user/${username}`, {
+					headers: {
+						Authorization: `Bearer ${JSON.parse(localStorage.getItem("user-threads")).token}`,
+					},
+				});
 				const data = await res.json();
 				console.log(data);
 				setPosts(data);

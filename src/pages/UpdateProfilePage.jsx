@@ -41,6 +41,7 @@ export default function UpdateProfilePage() {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",
+					Authorization: `Bearer ${JSON.parse(localStorage.getItem("user-threads")).token}`,
 				},
 				body: JSON.stringify({ ...inputs, profilePic: imgUrl }),
 			});

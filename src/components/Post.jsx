@@ -23,6 +23,9 @@ const Post = ({ post, postedBy }) => {
 
 			const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${post._id}`, {
 				method: "DELETE",
+				headers: {
+					Authorization: `Bearer ${JSON.parse(localStorage.getItem("user-threads")).token}`,
+				},
 			});
 			const data = await res.json();
 			if (data.error) {
