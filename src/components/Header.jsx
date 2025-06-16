@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Link, useColorMode } from "@chakra-ui/react";
+import { Button, Flex, Image, Link, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { AiFillHome } from "react-icons/ai";
@@ -15,7 +15,17 @@ const Header = () => {
 	const setAuthScreen = useSetRecoilState(authScreenAtom);
 
 	return (
-		<Flex justifyContent={"space-between"} mt={6} mb='12'>
+		<Flex
+			position="fixed"
+			top="0"
+			left="0"
+			right="0"
+			zIndex="100"
+			justifyContent={"space-between"}
+			py={4}
+			px={4}
+			bg={useColorModeValue("gray.50", "gray.800")}
+		>
 			{user && (
 				<Link as={RouterLink} to='/'>
 					<AiFillHome size={24} />

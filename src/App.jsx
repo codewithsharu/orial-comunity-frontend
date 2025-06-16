@@ -13,7 +13,7 @@ function App() {
 	const user = useRecoilValue(userAtom);
 	console.log(user);
 	return (
-		<Container maxW='620px'>
+		<Container maxW='620px' pt={20}>
 			<Header />
 			<Routes>
 				<Route path='/' element={user ? <HomePage /> : <Navigate to='/auth' />} />
