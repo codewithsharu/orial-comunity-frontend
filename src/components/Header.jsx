@@ -1,10 +1,11 @@
-import { Button, Flex, Image, Link, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Button, Flex, Image, Link, useColorMode, useColorModeValue, Text } from "@chakra-ui/react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { AiFillHome } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
 import { Link as RouterLink } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
+import { MdStorefront } from "react-icons/md";
 import useLogout from "../hooks/useLogout";
 import authScreenAtom from "../atoms/authAtom";
 
@@ -27,9 +28,15 @@ const Header = () => {
 			bg={useColorModeValue("gray.50", "gray.800")}
 		>
 			{user && (
-				<Link as={RouterLink} to='/'>
-					<AiFillHome size={24} />
-				</Link>
+				<Flex gap={4}>
+					<Link href="https://orial-front.vercel.app/" isExternal display="flex" alignItems="center" gap={2}>
+						<MdStorefront size={24} />
+						<Text fontWeight="bold" color="gold" fontSize="lg">Store</Text>
+					</Link>
+					<Link as={RouterLink} to='/'>
+						<AiFillHome size={24} />
+					</Link>
+				</Flex>
 			)}
 			{!user && (
 				<Link as={RouterLink} to={"/auth"} onClick={() => setAuthScreen("login")}>
